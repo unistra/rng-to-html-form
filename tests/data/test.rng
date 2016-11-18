@@ -1,23 +1,548 @@
-<rng:grammar xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0" ns="fr:gouv:culture:archivesdefrance:seda:v1.0" datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes">
-    <rng:start combine="choice">
-        <rng:ref name="ArchiveTransferRequest"/>
-    </rng:start>
-    <rng:define name="ArchiveTransferRequest">
-        <rng:element name="ArchiveTransferRequest">
-            <rng:element name="Comment">
-                <rng:text/>
-                <rng:attribute name="foo">
-                    <rng:data type="string"/>
-                </rng:attribute>
+<?xml version="1.0" encoding="UTF-8"?>
+<rng:grammar xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:udt="urn:un:unece:uncefact:data:standard:UnqualifiedDataType:10" xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:qdt="fr:gouv:culture:archivesdefrance:seda:v1.0:QualifiedDataType:1" xmlns:ccts="urn:un:unece:uncefact:documentation:standard:CoreComponentsTechnicalSpecification:2" xmlns="fr:gouv:culture:archivesdefrance:seda:v1.0" ns="fr:gouv:culture:archivesdefrance:seda:v1.0" datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes">
+<rng:start combine="choice">
+<rng:ref name="ArchiveTransfer"/>
+</rng:start>
+<rng:define name="ArchiveTransfer">
+    <rng:element name="ArchiveTransfer">
+        <rng:ref name="ArchiveTransfer_N65537"/>
+    </rng:element>
+</rng:define>
+
+<rng:define name="ArchiveTransfer_N65537">
+    <rng:element name="Comment">
+        <rng:ref name="Comment_N65541"/>
+    </rng:element>
+    <rng:element name="Date">
+        <rng:data type="string"/>
+    </rng:element>
+    <rng:element name="TransferIdentifier">
+        <rng:ref name="TransferIdentifier_N65562"/>
+    </rng:element>
+    <rng:element name="ArchivalAgency">
+        <rng:ref name="ArchivalAgency_N65594"/>
+    </rng:element>
+    <rng:element name="TransferringAgency">
+        <rng:ref name="TransferringAgency_N65646"/>
+    </rng:element>
+    <rng:element name="Archive">
+        <rng:ref name="Archive_N65696"/>
+    </rng:element>
+</rng:define>
+
+<rng:define name="ArchivalAgency_N65594">
+ <rng:element name="Identification">
+    <rng:ref name="Identification_N65597"/>
+ </rng:element>
+ <rng:element name="Name">
+    <rng:ref name="Name_N65632"/>
+ </rng:element>
+</rng:define>
+<rng:define name="TransferringAgency_N65646">
+    <rng:element name="Identification">
+        <rng:ref name="Identification_N65649"/>
+    </rng:element>
+<rng:element name="Name">
+    <rng:ref name="Name_N65684"/>
+</rng:element>
+</rng:define>
+<rng:define name="Archive_N65696">
+    <rng:element name="ArchivalAgreement">
+        <rng:ref name="ArchivalAgreement_N65700"/>
+    </rng:element>
+    <rng:element name="ArchivalProfile">
+        <rng:ref name="ArchivalProfile_N65733"/>
+    </rng:element>
+    <rng:element name="DescriptionLanguage">
+        <rng:ref name="DescriptionLanguage_N65766"/>
+    </rng:element>
+    <rng:element name="Name">
+        <rng:ref name="Name_N65780"/>
+    </rng:element>
+    <rng:element name="TransferringAgencyArchiveIdentifier">
+        <rng:ref name="TransferringAgencyArchiveIdentifier_N65792"/>
+    </rng:element>
+    <rng:element name="ContentDescription">
+    <rng:ref name="ContentDescription_N65825"/>
+    </rng:element>
+    <rng:element name="AccessRestrictionRule">
+    <rng:ref name="AccessRestrictionRule_N66085"/>
+    </rng:element>
+    <rng:element name="AppraisalRule">
+    <rng:ref name="AppraisalRule_N66117"/>
+    </rng:element>
+        <rng:optional>
+            <rng:element name="ArchiveObject">
+                <rng:ref name="ArchiveObject_N66157"/>
             </rng:element>
-            <rng:element name="Date">
-                <rng:data type="dateTime"/>
-            </rng:element>
-            <rng:optional>
-                <rng:attribute name="cars">
-                    <rng:data type="string"/>
-                </rng:attribute>
-            </rng:optional>
+        </rng:optional>
+    <rng:optional>
+    <rng:element name="ArchiveObject">
+        <rng:ref name="ArchiveObject_N66326"/>
+    </rng:element>
+    </rng:optional>
+<rng:element name="ArchiveObject">
+    <rng:ref name="ArchiveObject_N66493"/>
+</rng:element>
+</rng:define>
+
+<rng:define name="ContentDescription_N65825">
+    <rng:element name="Description">
+        <rng:ref name="Description_N65830"/>
+    </rng:element>
+<rng:element name="DescriptionLevel">
+    <rng:ref name="DescriptionLevel_N65844"/>
+</rng:element>
+<rng:element name="FilePlanPosition">
+    <rng:ref name="FilePlanPosition_N65857"/>
+</rng:element>
+<rng:element name="Language">
+    <rng:ref name="Language_N65891"/>
+</rng:element>
+<rng:element name="LatestDate">
+    <rng:value>2008-12-31</rng:value>
+</rng:element>
+<rng:element name="OldestDate">
+    <rng:data type="string"/>
+</rng:element>
+<rng:element name="CustodialHistory">
+    <rng:ref name="CustodialHistory_N65922"/>
+</rng:element>
+<rng:zeroOrMore>
+    <rng:element name="Keyword">
+        <rng:ref name="Keyword_N65949"/>
+    </rng:element>
+</rng:zeroOrMore>
+<rng:zeroOrMore>
+    <rng:element name="Keyword">
+        <rng:ref name="Keyword_N65981"/>
+    </rng:element>
+</rng:zeroOrMore>
+<rng:element name="OriginatingAgency">
+    <rng:ref name="OriginatingAgency_N66013"/>
+</rng:element>
+</rng:define>
+
+<rng:define name="CustodialHistory_N65922">
+<rng:oneOrMore>
+    <rng:element name="CustodialHistoryItem">
+        <rng:ref name="CustodialHistoryItem_N65927"/>
+    </rng:element>
+</rng:oneOrMore>
+</rng:define>
+<rng:define name="Keyword_N65949">
+    <rng:element name="KeywordContent">
+        <rng:ref name="KeywordContent_N65954"/>
+    </rng:element>
+</rng:define>
+<rng:define name="Keyword_N65981">
+    <rng:element name="KeywordContent">
+        <rng:ref name="KeywordContent_N65986"/>
+    </rng:element>
+</rng:define>
+<rng:define name="OriginatingAgency_N66013">
+    <rng:optional>
+        <rng:element name="Description">
+            <rng:ref name="Description_N66018"/>
         </rng:element>
-    </rng:define>
+    </rng:optional>
+    <rng:element name="Identification">
+        <rng:ref name="Identification_N66031"/>
+    </rng:element>
+    <rng:element name="Name">
+        <rng:ref name="Name_N66066"/>
+    </rng:element>
+</rng:define>
+<rng:define name="AccessRestrictionRule_N66085">
+    <rng:element name="Code">
+        <rng:ref name="Code_N66088"/>
+    </rng:element>
+    <rng:element name="StartDate">
+        <rng:value>2008-12-31</rng:value>
+    </rng:element>
+</rng:define>
+<rng:define name="AppraisalRule_N66117">
+    <rng:element name="Code">
+        <rng:ref name="Code_N66122"/>
+    </rng:element>
+    <rng:element name="Duration">
+        <rng:value>P80Y</rng:value>
+    </rng:element>
+<rng:element name="StartDate">
+    <rng:data type="string"/>
+</rng:element>
+</rng:define>
+<rng:define name="ArchiveObject_N66157">
+<rng:element name="Name"><rng:ref name="Name_N66162"/>
+</rng:element>
+<rng:oneOrMore>
+    <rng:element name="ArchiveObject">
+        <rng:ref name="ArchiveObject_N66173"/>
+    </rng:element>
+</rng:oneOrMore>
+</rng:define>
+<rng:define name="ArchiveObject_N66173">
+    <rng:element name="Name">
+        <rng:ref name="Name_N66178"/>
+    </rng:element>
+<rng:optional>
+<rng:element name="ContentDescription">
+<rng:ref name="ContentDescription_N66190"/>
+</rng:element>
+</rng:optional>
+<rng:element name="Document">
+<rng:ref name="Document_N66228"/>
+</rng:element>
+</rng:define>
+<rng:define name="ContentDescription_N66190">
+<rng:element name="DescriptionLevel">
+<rng:ref name="DescriptionLevel_N66194"/>
+</rng:element>
+<rng:element name="Language">
+<rng:ref name="Language_N66207"/>
+</rng:element>
+</rng:define>
+<rng:define name="Document_N66228">
+<rng:element name="Attachment">
+<rng:ref name="Attachment_N66233"/>
+</rng:element>
+<rng:element name="Integrity">
+<rng:ref name="Integrity_N66265"/>
+</rng:element><rng:optional>
+<rng:element name="Size">
+<rng:ref name="Size_N66278"/>
+</rng:element>
+</rng:optional>
+<rng:element name="Type">
+<rng:ref name="Type_N66291"/>
+</rng:element>
+</rng:define>
+<rng:define name="ArchiveObject_N66326">
+<rng:element name="Name">
+<rng:ref name="Name_N66331"/>
+</rng:element>
+<rng:oneOrMore>
+<rng:element name="ArchiveObject">
+<rng:ref name="ArchiveObject_N66342"/>
+</rng:element>
+</rng:oneOrMore>
+</rng:define>
+<rng:define name="ArchiveObject_N66342">
+<rng:element name="Name">
+<rng:ref name="Name_N66347"/>
+</rng:element>
+<rng:optional>
+<rng:element name="ContentDescription">
+<rng:ref name="ContentDescription_N66359"/>
+</rng:element>
+</rng:optional>
+<rng:element name="Document">
+<rng:ref name="Document_N66397"/>
+</rng:element>
+</rng:define>
+<rng:define name="ContentDescription_N66359">
+<rng:element name="DescriptionLevel">
+<rng:ref name="DescriptionLevel_N66363"/>
+</rng:element>
+<rng:element name="Language">
+<rng:ref name="Language_N66376"/>
+</rng:element>
+</rng:define>
+<rng:define name="Document_N66397">
+<rng:element name="Attachment">
+<rng:ref name="Attachment_N66402"/>
+</rng:element>
+<rng:element name="Integrity">
+<rng:ref name="Integrity_N66434"/>
+</rng:element>
+<rng:optional>
+<rng:element name="Size">
+<rng:ref name="Size_N66445"/>
+</rng:element>
+</rng:optional>
+<rng:element name="Type">
+<rng:ref name="Type_N66458"/>
+</rng:element>
+</rng:define>
+<rng:define name="ArchiveObject_N66493">
+    <rng:element name="Name">
+        <rng:ref name="Name_N66498"/>
+    </rng:element>
+    <rng:optional>
+        <rng:element name="ContentDescription">
+            <rng:ref name="ContentDescription_N66509"/>
+        </rng:element>
+    </rng:optional>
+    <rng:element name="Document">
+        <rng:ref name="Document_N66561"/>
+    </rng:element>
+</rng:define>
+<rng:define name="ContentDescription_N66509">
+<rng:element name="Description">
+<rng:ref name="Description_N66513"/>
+</rng:element>
+<rng:element name="DescriptionLevel">
+<rng:ref name="DescriptionLevel_N66527"/>
+</rng:element><rng:element name="Language">
+<rng:ref name="Language_N66540"/>
+</rng:element>
+</rng:define>
+<rng:define name="Document_N66561">
+    <rng:element name="Attachment">
+        <rng:ref name="Attachment_N66566"/>
+    </rng:element>
+    <rng:element name="Integrity">
+        <rng:ref name="Integrity_N66598"/>
+    </rng:element>
+    <rng:optional>
+        <rng:element name="Size">
+            <rng:ref name="Size_N66611"/>
+        </rng:element>
+    </rng:optional>
+    <rng:element name="Type">
+        <rng:ref name="Type_N66624"/>
+    </rng:element>
+</rng:define>
+<rng:define name="Comment_N65541">
+<rng:value>My comment</rng:value>
+</rng:define>
+<rng:define name="TransferIdentifier_N65562">
+    <rng:data type="string"/>
+</rng:define>
+<rng:define name="Identification_N65597">
+<rng:value>00000000000000</rng:value>
+<rng:attribute name="schemeName">
+<rng:value>SIRET</rng:value>
+</rng:attribute>
+<rng:attribute name="schemeAgencyName">
+<rng:value>AGENCY</rng:value>
+</rng:attribute>
+</rng:define>
+<rng:define name="Name_N65632"><rng:value>My center</rng:value></rng:define>
+<rng:define name="Identification_N65649">
+    <rng:value>00000000000000</rng:value>
+<rng:attribute name="schemeName">
+    <rng:value>SIRET</rng:value>
+</rng:attribute>
+<rng:attribute name="schemeAgencyName">
+    <rng:value>AGENCY</rng:value>
+</rng:attribute>
+</rng:define>
+<rng:define name="Name_N65684"><rng:value>My service</rng:value>
+</rng:define>
+<rng:define name="ArchivalAgreement_N65700">
+<rng:data type="string"/>
+</rng:define>
+<rng:define name="ArchivalProfile_N65733">
+<rng:data type="string"/>
+</rng:define>
+<rng:define name="DescriptionLanguage_N65766">
+<rng:value>fra</rng:value>
+<rng:attribute name="listVersionID">
+<rng:value>edition 2011</rng:value>
+</rng:attribute>
+</rng:define>
+<rng:define name="Name_N65780"><rng:data type="string"/></rng:define>
+<rng:define name="TransferringAgencyArchiveIdentifier_N65792">
+<rng:data type="string"/>
+</rng:define>
+<rng:define name="Description_N65830">
+<rng:value>My description</rng:value>
+</rng:define>
+<rng:define name="DescriptionLevel_N65844">
+<rng:value>file</rng:value>
+<rng:attribute name="listVersionID">
+<rng:value>edition 2009</rng:value>
+</rng:attribute>
+</rng:define>
+<rng:define name="FilePlanPosition_N65857">
+<rng:data type="string"/>
+</rng:define>
+<rng:define name="Language_N65891">
+<rng:value>fra</rng:value>
+<rng:attribute name="listVersionID">
+<rng:value>edition 2011</rng:value>
+</rng:attribute>
+</rng:define>
+<rng:define name="CustodialHistoryItem_N65927">
+<rng:value>My career</rng:value>
+</rng:define>
+<rng:define name="KeywordContent_N65954">
+    <rng:value>Carrière</rng:value>
+</rng:define>
+<rng:define name="KeywordContent_N65986">
+    <rng:value>personnel</rng:value>
+</rng:define>
+<rng:define name="Description_N66018">
+<rng:data type="string"/>
+</rng:define>
+<rng:define name="Identification_N66031">
+<rng:value>00000000000000</rng:value>
+<rng:attribute name="schemeName">
+<rng:value>SIRET</rng:value>
+</rng:attribute>
+<rng:attribute name="schemeAgencyName">
+<rng:value>AGENCY</rng:value>
+</rng:attribute>
+</rng:define>
+<rng:define name="Name_N66066">
+<rng:value>Direction des ressources humaines</rng:value>
+</rng:define>
+<rng:define name="Code_N66088">
+<rng:value>AR048</rng:value>
+<rng:attribute name="listVersionID">
+<rng:value>edition 2009</rng:value>
+</rng:attribute>
+</rng:define>
+<rng:define name="Code_N66122">
+<rng:value>detruire</rng:value>
+<rng:attribute name="listVersionID">
+<rng:value>edition 2009</rng:value>
+</rng:attribute>
+</rng:define>
+<rng:define name="Name_N66162">
+<rng:value>Personnel enseignant</rng:value>
+</rng:define>
+<rng:define name="Name_N66178">
+<rng:data type="string"/>
+</rng:define>
+<rng:define name="DescriptionLevel_N66194">
+<rng:value>item</rng:value>
+<rng:attribute name="listVersionID">
+<rng:value>edition 2009</rng:value>
+</rng:attribute>
+</rng:define>
+<rng:define name="Language_N66207">
+<rng:value>fra</rng:value>
+<rng:attribute name="listVersionID">
+<rng:value>edition 2011</rng:value>
+</rng:attribute></rng:define>
+<rng:define name="Attachment_N66233">
+<rng:data type="string"/>
+<rng:attribute name="format">
+<rng:data type="string"/>
+</rng:attribute>
+<rng:attribute name="filename">
+<rng:data type="string"/>
+</rng:attribute>
+</rng:define>
+<rng:define name="Integrity_N66265">
+<rng:data type="string"/>
+<rng:attribute name="algorithme">
+<rng:data type="string"/>
+</rng:attribute>
+</rng:define>
+<rng:define name="Size_N66278">
+<rng:data type="string"/>
+<rng:attribute name="unitCode">
+<rng:data type="string"/>
+</rng:attribute>
+</rng:define>
+<rng:define name="Type_N66291">
+<rng:value>CDO</rng:value>
+<rng:attribute name="listVersionID">
+<rng:value>edition 2009</rng:value>
+</rng:attribute>
+</rng:define>
+<rng:define name="Name_N66331">
+    <rng:value>Personnel administratif</rng:value>
+</rng:define>
+<rng:define name="Name_N66347">
+<rng:data type="string"/></rng:define>
+<rng:define name="DescriptionLevel_N66363">
+<rng:value>item</rng:value>
+<rng:attribute name="listVersionID">
+<rng:value>edition 2009</rng:value>
+</rng:attribute></rng:define>
+<rng:define name="Language_N66376">
+<rng:value>fra</rng:value>
+<rng:attribute name="listVersionID">
+<rng:value>edition 2011</rng:value>
+</rng:attribute></rng:define>
+<rng:define name="Attachment_N66402">
+<rng:data type="string"/>
+<rng:attribute name="format">
+<rng:data type="string"/>
+</rng:attribute>
+<rng:attribute name="filename">
+<rng:data type="string"/>
+</rng:attribute>
+</rng:define>
+<rng:define name="Integrity_N66434">
+<rng:data type="string"/>
+<rng:attribute name="algorithme">
+<rng:data type="string"/>
+</rng:attribute>
+</rng:define>
+<rng:define name="Size_N66445">
+<rng:data type="string"/>
+<rng:attribute name="unitCode">
+<rng:data type="string"/>
+</rng:attribute>
+</rng:define>
+<rng:define name="Type_N66458">
+<rng:value>CDO</rng:value>
+<rng:attribute name="listVersionID">
+<rng:value>edition 2009</rng:value>
+</rng:attribute></rng:define>
+<rng:define name="Name_N66498">
+<rng:value>Récapitulatif annuel des agents</rng:value>
+</rng:define>
+<rng:define name="Description_N66513">
+<rng:value>My description</rng:value>
+</rng:define>
+<rng:define name="DescriptionLevel_N66527">
+<rng:value>item</rng:value>
+<rng:attribute name="listVersionID">
+<rng:value>edition 2009</rng:value>
+</rng:attribute>
+</rng:define>
+<rng:define name="Language_N66540">
+<rng:value>fra</rng:value>
+<rng:attribute name="listVersionID">
+<rng:value>edition 2011</rng:value>
+</rng:attribute></rng:define>
+<rng:define name="Attachment_N66566">
+    <rng:data type="string"/>
+    <rng:attribute name="format">
+        <rng:data type="string"/>
+    </rng:attribute>
+    <rng:attribute name="filename">
+        <rng:data type="string"/>
+    </rng:attribute>
+</rng:define>
+<rng:define name="Integrity_N66598">
+    <rng:data type="string"/>
+    <rng:attribute name="algorithme">
+            <rng:data type="string"/>
+    </rng:attribute>
+</rng:define>
+<rng:define name="Size_N66611">
+<rng:data type="string"/>
+<rng:attribute name="unitCode">
+<rng:data type="string"/>
+</rng:attribute>
+</rng:define>
+<rng:define name="Type_N66624">
+    <rng:value>CDO</rng:value>
+    <rng:attribute name="listVersionID">
+        <rng:value>edition 2009</rng:value>
+    </rng:attribute>
+</rng:define>
+<rng:define name="anyElement">
+<rng:zeroOrMore>
+<rng:element>
+<rng:anyName/>
+<rng:zeroOrMore>
+<rng:choice>
+<rng:attribute>
+<rng:anyName/>
+</rng:attribute>
+<rng:text/>
+<rng:ref name="anyElement"/>
+</rng:choice>
+</rng:zeroOrMore>
+</rng:element>
+</rng:zeroOrMore>
+</rng:define>
 </rng:grammar>
