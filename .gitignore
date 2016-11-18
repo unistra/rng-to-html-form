@@ -1,0 +1,12 @@
+*.sublime-*
+*.egg-info
+*.pyc
+.project
+.pydevproject
+.settings
+docs/build/
+.coverage
+htmlcov
+dist
+.tox
+build

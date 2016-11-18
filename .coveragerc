@@ -1,0 +1,6 @@
+[run]
+source =
+    rng_to_form
+
+[report]
+omit = */tests/*
