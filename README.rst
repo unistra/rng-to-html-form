@@ -45,7 +45,7 @@ Takes an rng file and makes an html form :
     # Generates a dict of dicts from dot separated keys. Result will be : {'a': {'c': {}, 'b': {}}, 'b': {'d': {}, 'e': {'b': {}, 'a': {}}}}
     data = {'a.b': 1, 'a.c': 2, 'b.d' : 1, 'b.e.a': 1, 'b.e.b': 2}
     tree = make_tree(data)
-    # Makes a nested python object from the form data
+    # Makes a nested python object from the form data. It modifies "tree"
     set_in_nested_dict(tree, data)
     # Builds the final python object with all ordered elements
     order = rng.find_definitions()
