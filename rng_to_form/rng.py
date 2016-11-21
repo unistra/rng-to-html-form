@@ -193,8 +193,8 @@ class RNG(object):
     def build_from_root(self):
         return [x .attrib.get('name') for x in self.root.findall("./rng:ref".format(self.target), self.root.nsmap)]
 
-    def get_archivetransfer_root(self):
-        return self.root.find(".//rng:define[@name='ArchiveTransfer']",
+    def get_form_root(self, root_name='ArchiveTransfer'):
+        return self.root.find(".//rng:define[@name='{0}']".format(root_name),
             self.root.nsmap).find(".//rng:ref", self.root.nsmap).attrib['name']
 
     def find_definitions(self, the_d={}, target=None):

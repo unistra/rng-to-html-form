@@ -1,10 +1,10 @@
-def make_form(rng):
+def make_form(rng, root_name='ArchiveTransfer'):
     """Takes an rng,  returns a html form.
 
     Should be reworked.
     """
     results = rng.to_form()
-    inside = results['ArchiveTransfer']
+    inside = results[root_name]
 
     def make_input(value):
         """ depending on what is found in the rng, make the input"""
