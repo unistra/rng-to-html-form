@@ -347,7 +347,19 @@
 <rng:data type="string"/>
 </rng:define>
 <rng:define name="Description_N65830">
-<rng:value>My description</rng:value>
+<rng:value>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+Proin eu magna quis tortor rhoncus imperdiet quis ut lectus. Integer at est magna.
+Integer maximus arcu blandit eros sodales, vel vestibulum dui volutpat. Suspendisse
+sollicitudin erat eget tincidunt facilisis. Quisque fermentum eu sapien id lacinia.
+Praesent pulvinar imperdiet diam vitae varius. Fusce sollicitudin augue at augue fringilla maximus.
+Donec quis aliquam odio, vel interdum ipsum. Nam facilisis sem a mi volutpat finibus.
+Morbi eros turpis, vulputate sed volutpat id, molestie nec turpis. Nulla porttitor neque id erat aliquam sagittis.
+In hac habitasse platea dictumst.
+
+Morbi nec interdum quam. Etiam malesuada nibh sit amet dolor euismod, quis ultricies mi vulputate.
+Donec a ex eleifend, dignissim nisl sed, tincidunt mi. Sed risus nulla, aliquam quis justo et, placerat sagittis leo.
+Donec a rhoncus diam. Sed tincidunt nibh ut enim convallis, vel convallis ligula tempor.
+Nunc imperdiet nunc at tortor mattis, nec dictum libero mollis. Cras ligula eros, tempor sed laoreet in, sodales eu risus.</rng:value>
 </rng:define>
 <rng:define name="DescriptionLevel_N65844">
 <rng:value>file</rng:value>

@@ -135,30 +135,30 @@ class RNG(object):
             'name')): get_content(x) for x in list(chain(*self.get_childs(definitionx)))}
         return results
 
-    def find_by_tag_name(self, tag_name):
-        """finds by tag name"""
-        return [element for element in self.root.findall(".//{0}".format(tag_name))]
+    # def find_by_tag_name(self, tag_name):
+    #     """finds by tag name"""
+    #     return [element for element in self.root.findall(".//{0}".format(tag_name))]
 
-    def contains_a_reference(self, element):
-        """
-        Element containing a reference are the components.
-        Other ones are their definition.
-        Returns either matching element either None. Might be usefull somedayyyyyyyy"""
-        return element.find(".//rng:ref", self.root.nsmap)
+    # def contains_a_reference(self, element):
+    #     """
+    #     Element containing a reference are the components.
+    #     Other ones are their definition.
+    #     Returns either matching element either None. Might be usefull somedayyyyyyyy"""
+    #     return element.find(".//rng:ref", self.root.nsmap)
 
-    def find_all(self, array, child_name):
-        """
-        finds all
-        """
-        return [element.findall(child_name, self.root.nsmap) for element in array]
+    # def find_all(self, array, child_name):
+    #     """
+    #     finds all
+    #     """
+    #     return [element.findall(child_name, self.root.nsmap) for element in array]
 
-    def find_by_attr_val(self, tag, name):
-        """Too specific, change things here man"""
-        return [element for element in self.root.findall("rng:*[@{0}='{1}']".format(tag, name), self.root.nsmap)]
+    # def find_by_attr_val(self, tag, name):
+    #     """Too specific, change things here man"""
+    #     return [element for element in self.root.findall("rng:*[@{0}='{1}']".format(tag, name), self.root.nsmap)]
 
-    def all_children(self):
-        """all children"""
-        return self.root.findall('.//')
+    # def all_children(self):
+    #     """all children"""
+    #     return self.root.findall('.//')
 
     def inside_ref_or_type(self, element):
         """man"""
@@ -186,12 +186,6 @@ class RNG(object):
     def find_target_ref(self):
         """returns the element in which the target is defined"""
         return self.find_ref(self.target)
-
-    def build_form_from_root(self):
-        return self.root.findall(".//rng:ref[@name='{0}']".format(self.target), self.root.nsmap)
-
-    def build_from_root(self):
-        return [x .attrib.get('name') for x in self.root.findall("./rng:ref".format(self.target), self.root.nsmap)]
 
     def get_form_root(self, root_name='ArchiveTransfer'):
         return self.root.find(".//rng:define[@name='{0}']".format(root_name),
