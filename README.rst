@@ -1,6 +1,30 @@
 rng-to-html-form
 ================
 
+.. image:: https://api.travis-ci.org/unistra/rng-to-html-form.svg?branch=master
+    :target: https://travis-ci.org/unistra/rng-to-html-form
+    :alt: Build
+
+.. image:: http://coveralls.io/repos/unistra/rng-to-html-form/badge.png?branch=master
+    :target: http://coveralls.io/r/unistra/rng-to-html-form?branch=master
+    :alt: Coverage
+
+.. image:: https://img.shields.io/pypi/v/rng-to-html-form.svg
+    :target: https://pypi.python.org/pypi/rng-to-html-form
+    :alt: Version
+
+.. image:: https://img.shields.io/pypi/pyversions/rng-to-html-form.svg
+    :target: https://pypi.python.org/pypi/rng-to-html-form
+    :alt: Python Version
+
+.. image:: https://img.shields.io/pypi/status/rng-to-html-form.svg
+    :target: https://pypi.python.org/pypi/rng-to-html-form
+    :alt: Python Version
+
+.. image:: https://img.shields.io/pypi/l/rng-to-html-form.svg
+    :target: https://docs.python.org/3/license.html
+    :alt: Licence
+
 Requirements
 ------------
 
