@@ -61,7 +61,7 @@ class RNG(object):
                 return "data:{0}".format(type)
 
             def value(x):
-                return "not editable: {}".format(x.text)
+                return "not editable:{}".format(x.text)
 
             def attribute(x):
                 inner = x.find('.//')

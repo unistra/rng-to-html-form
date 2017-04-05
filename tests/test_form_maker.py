@@ -13,7 +13,7 @@ class RngTest(TestCase):
     def test_generate_form(self):
         generated_form = make_form(self.rng)
         self.assertIsNotNone(generated_form)
-        self.assertTrue('''<div class="Comment_N65541"><div style='font-weight:bold;'>Comment_N65541.value</div><input class='selectable' value=" My comment" style='width:87%' name="Comment_N65541" readonly></div></div>''' in generated_form)
+        self.assertTrue('''<div class="Comment_N65541"><div style='font-weight:bold;'>Comment_N65541.value</div><input class='selectable' value="My comment" style='width:87%' name="Comment_N65541" readonly></div></div>''' in generated_form)
 
     def test_make_tree(self):
         tree = make_tree({'a.b': 1, 'a.c': 2, 'b.d': 1, 'b.e.a': 1, 'b.e.b': 2})
